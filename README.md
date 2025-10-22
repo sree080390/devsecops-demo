@@ -1,4 +1,4 @@
-#This is now the code in the srivatsasa's repository
+#This is now the code in the srivatsasa's repository.
 
 # DevSecOps Pipeline Implementation for Tic Tac Toe Game
 
