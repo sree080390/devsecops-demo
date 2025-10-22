@@ -26,13 +26,22 @@ pipeline:
                     command: npm install
                   timeout: ""
                   type: Run
-              - step:
-                  identifier: test
-                  name: test
-                  spec:
-                    command: npm run test
-                  timeout: ""
-                  type: Run
+              - parallel:
+                  - step:
+                      identifier: test
+                      name: test
+                      spec:
+                        command: npm run test
+                      timeout: ""
+                      type: Run
+                  - step:
+                      type: Test
+                      name: Test_1
+                      identifier: Test_1
+                      spec:
+                        shell: Sh
+                        command: mvn test
+                        intelligenceMode: true
               - step:
                   identifier: lint
                   name: lint
