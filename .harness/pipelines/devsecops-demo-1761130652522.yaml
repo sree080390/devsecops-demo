@@ -65,3 +65,4 @@ pipeline:
             spec: {}
             type: Cloud
         type: CI
+        description: ""
