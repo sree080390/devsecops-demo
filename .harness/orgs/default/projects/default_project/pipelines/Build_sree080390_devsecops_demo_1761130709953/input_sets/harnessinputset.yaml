@@ -1,0 +1,26 @@
+inputSet:
+  name: harness-input-set
+  identifier: harnessinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_sree080390_devsecops_demo_1761130709953
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+input>
+    stages:
+      - stage:
+          identifier: build1
+          type: CI
+          spec:
+            execution:
+              steps:
+                - step:
+                    identifier: dockerbuild
+                    type: BuildAndPushDockerRegistry
+                    spec:
+                      connectorRef: <+input>
